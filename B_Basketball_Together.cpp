@@ -10,17 +10,20 @@ int main() {
 
     vector<long long> arr(n);
     for (auto &x : arr) cin >> x;
-    sort(arr.rbegin(), arr.rend());
+    sort(arr.begin(), arr.end());
 
+    int l = 0, r = n - 1;
     int res = 0;
-    int i = 0;
-    while (i < n) {
-        long long mx = arr[i];
-        long long need = D / mx + 1;
-        if (i + need <= n) {
+
+    while (l <= r) {
+        long long need = (D + arr[r]) / arr[r];
+        if (r - l + 1 >= need) {
             res++;
-            i += need;
-        }else    break;
+            l += need - 1;
+            r--;
+        } else {
+            break;
+        }
     }
     cout << res << "\n";
 }
