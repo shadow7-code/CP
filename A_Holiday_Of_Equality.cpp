@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
+    cin >> n;
+    long long sum=0, mx=0;
+    for(int i=0;i<n;i++){
+        long long  x;
+        cin >> x;
+        sum+=x;
+        mx=max(mx,x);
+    }
+    cout << mx*n-sum << '\n';
+    return 0;
+}
