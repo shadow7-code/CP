@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin>>t;
+    while(t--){
+        long long n;
+        cin>>n;
+        long long res=0;
+        for(long long b=1;b<=n;b++){
+            long long cnt=n/b;
+            res+=cnt*cnt;
+        }
+        cout<<res<<"\n";
+    }
+    return 0;
+}
